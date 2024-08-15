@@ -25,16 +25,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_074425) do
   end
 
   create_table "mutations", force: :cascade do |t|
-    t.string "receiverable_type"
-    t.integer "receiverable_id"
-    t.string "senderable_type"
-    t.integer "senderable_id"
+    t.string "receiver_type"
+    t.integer "receiver_id"
+    t.string "sender_type"
+    t.integer "sender_id"
     t.integer "nominal"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["receiverable_id", "receiverable_type"], name: "index_mutations_on_receiverable_id_and_receiverable_type"
-    t.index ["senderable_id", "senderable_type"], name: "index_mutations_on_senderable_id_and_senderable_type"
+    t.index ["receiver_id", "receiver_type"], name: "index_mutations_on_receiver_id_and_receiver_type"
+    t.index ["sender_id", "sender_type"], name: "index_mutations_on_sender_id_and_sender_type"
   end
 
   create_table "users", force: :cascade do |t|

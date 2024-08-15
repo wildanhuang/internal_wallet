@@ -1,6 +1,4 @@
-class Api::V1::AuthenticationsController < ApplicationController
-  include ApiKeyAuthenticatable 
- 
+class Api::V1::AuthenticationsController < ApplicationController 
   # Require token authentication for keys     
   prepend_before_action :authenticate_with_api_key!, only: [:keys] 
  

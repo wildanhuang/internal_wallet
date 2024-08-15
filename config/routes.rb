@@ -17,6 +17,8 @@ Rails.application.routes.draw do
           delete  :logout
         end
       end
+
+      resources :wallets, only: [:index]
     end
   end
 end
