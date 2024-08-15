@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
       resources :wallets, only: [:index] do
         collection do
-          get :balance
+          get   :balance
+          post  :deposit
+          post  :withdraw
         end
       end
     end
