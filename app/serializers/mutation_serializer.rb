@@ -7,9 +7,9 @@ class MutationSerializer < ActiveModel::Serializer
 
   def type
     if object.receiver_id == @instance_options[:user].id
-      "CREDIT"
+      "credit"
     else
-      "DEBIT"
+      "debit"
     end
   end
 end
