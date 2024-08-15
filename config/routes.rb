@@ -18,7 +18,11 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :wallets, only: [:index]
+      resources :wallets, only: [:index] do
+        collection do
+          get :balance
+        end
+      end
     end
   end
 end

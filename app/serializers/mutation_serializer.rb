@@ -1,5 +1,5 @@
 class MutationSerializer < ActiveModel::Serializer
-  attributes :date, :type, :nominal
+  attributes :date, :type, :nominal, :balance
 
   def date
     object.created_at.strftime("%d %b %Y")
