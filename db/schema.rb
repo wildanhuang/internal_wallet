@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_15_074425) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_15_170033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_074425) do
     t.datetime "updated_at", null: false
     t.index ["receiver_id", "receiver_type"], name: "index_mutations_on_receiver_id_and_receiver_type"
     t.index ["sender_id", "sender_type"], name: "index_mutations_on_sender_id_and_sender_type"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_teams_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
