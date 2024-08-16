@@ -25,6 +25,8 @@ Rails.application.routes.draw do
           post  :withdraw
         end
       end
+
+      resources :stock_prices, only: [:index]
     end
   end
 end
